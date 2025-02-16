@@ -61,7 +61,7 @@ const Login = () => {
 				</div>
 				<div className={styles.right}>
 					<h1>New Here ?</h1>
-					<Link to="/signup">
+					<Link to="/mobile-verification">
 						<button type="button" className={styles.white_btn}>
 							Register
 						</button>
