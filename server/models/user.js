@@ -4,30 +4,33 @@ const Joi = require("joi");
 const passwordComplexity = require("joi-password-complexity");
 
 const userSchema = new mongoose.Schema({
-	firstName: { type: String, required: true },
-	lastName: { type: String, required: true },
-	email: { type: String, required: true },
-	password: { type: String, required: true },
-	verified: {type:Boolean , default:false},
+    firstName: { type: String },
+    lastName: { type: String },
+    email: { type: String, unique: true, sparse: true }, // Sparse allows NULL values
+    password: { type: String },
+    phone: { type: String, required: true, unique: true },
+    mobileNumberVerified: { type: Boolean, default: false }, // ✅ OTP verified
+    verified: { type: Boolean, default: false }, // ✅ Email verified
 });
 
 userSchema.methods.generateAuthToken = function () {
-	const token = jwt.sign({ _id: this._id }, process.env.JWTPRIVATEKEY, {
-		expiresIn: "7d",
-	});
-	return token;
+    const token = jwt.sign({ _id: this._id }, process.env.JWTPRIVATEKEY, {
+        expiresIn: "7d",
+    });
+    return token;
 };
 
-const User = mongoose.model("user", userSchema);
+const User = mongoose.models.User || mongoose.model("User", userSchema);
 
-const validate = (data) => {
-	const schema = Joi.object({
-		firstName: Joi.string().required().label("First Name"),
-		lastName: Joi.string().required().label("Last Name"),
-		email: Joi.string().email().required().label("Email"),
-		password: passwordComplexity().required().label("Password"),
-	});
-	return schema.validate(data);
+const validateSignup = (data) => {
+    const schema = Joi.object({
+        firstName: Joi.string().required(),
+        lastName: Joi.string().required(),
+        email: Joi.string().email().required(),
+        password: passwordComplexity().required(),
+        phone: Joi.string().required(), // ✅ Add phone validation
+    });
+    return schema.validate(data);
 };
 
-module.exports = { User, validate };
+module.exports = { User, validateSignup };
