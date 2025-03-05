@@ -12,7 +12,7 @@ function App() {
     return (
         <Routes>
             {!user ? (
-                <Route path="/" element={<WelcomeScreen />} />
+                <Route path="/" element={<Login/>} />
             ) : (
                 <Route path="/" element={<Navigate replace to="/main" />} />
             )}

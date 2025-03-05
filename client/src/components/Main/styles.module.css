@@ -25,3 +25,177 @@
 	cursor: pointer;
 	margin-right: 20px;
 }
+.main_container{
+	/* background-color: white; */
+	background-color: black;
+	height: 100%;
+}
+.main-card{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	height: 100px;
+}
+.main-animations{
+	height: 20px;
+	width: 50px;
+}
+.logo{
+	width: 10px;
+	height: 200px;
+}
+.nav_links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav_links span {
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    transition: opacity 0.3s ease;
+}
+
+.nav_links span:hover {
+    opacity: 0.8;
+}
+
+.nav_links .active {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+.menu_icon {
+    display: none;
+    cursor: pointer;
+    color: white;
+}
+
+.nav_links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav_links span {
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    transition: opacity 0.3s ease;
+}
+
+.nav_links span:hover {
+    opacity: 0.8;
+}
+
+.nav_links .active {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu_icon {
+        display: block;
+    }
+
+    .nav_links {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #3bb19b;
+        width: 100%;
+        padding: 20px 0;
+        gap: 15px;
+        display: none;
+    }
+
+    .nav_links.open {
+        display: flex;
+    }
+}
+
+
+.menu_icon {
+    display: none;
+    cursor: pointer;
+    color: white;
+    margin-right: 40px;
+}
+
+.nav_links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav_links span {
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    transition: opacity 0.3s ease;
+}
+
+.nav_links span:hover {
+    opacity: 0.8;
+}
+
+.nav_links .active {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu_icon {
+        display: block;
+    }
+
+    .nav_links {
+        flex-direction: column;
+        /* align-items: center; */
+        
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #3bb19b;
+        width: 100%;
+        padding: 20px 0;
+        gap: 15px;
+        display: none;
+    }
+    .nav_links span{
+        margin-left: 40px;
+    }
+
+    .nav_links.open {
+        display: flex;
+    }
+
+    .white_btn {
+        display: none; /* Hide main logout on mobile */
+    }
+
+    .mobile_logout_btn {
+        display: block;
+        border: none;
+        outline: none;
+        padding: 12px 0;
+        background-color: white;
+        border-radius: 20px;
+        width: 120px;
+        font-weight: bold;
+        font-size: 14px;
+        cursor: pointer;
+        margin: 10px auto;
+    }
+}
+
+/* Desktop Logout Button */
+@media (min-width: 769px) {
+    .mobile_logout_btn {
+        display: none;
+    }
+}

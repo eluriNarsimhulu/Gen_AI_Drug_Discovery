@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./index.css"
 
 const MobileVerification = () => {
     const [phone, setPhone] = useState("");
@@ -26,6 +27,7 @@ const MobileVerification = () => {
         try {
             const { data } = await axios.post("http://localhost:8080/api/verify-otp", { phone, otp });
             alert("OTP verified successfully!");
+            localStorage.setItem("verifiedPhone", phone);
             navigate("/signup"); // Move to Signup Screen
         } catch (error) {
             setError(error.response?.data?.message || "Invalid OTP");
@@ -33,8 +35,9 @@ const MobileVerification = () => {
     };
 
     return (
-        <div>
-            <h2>Mobile Verification</h2>
+        <div className="mobile-bg">
+            <div className="card">
+            <h2 className="mobile-head">Mobile Verification</h2>
             {!otpSent ? (
                 <>
                     <input
@@ -42,8 +45,9 @@ const MobileVerification = () => {
                         placeholder="Enter mobile number"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
+                        className="input"
                     />
-                    <button onClick={sendOtp}>Send OTP</button>
+                    <button onClick={sendOtp} className="green_btn">Send OTP</button>
                 </>
             ) : (
                 <>
@@ -52,11 +56,15 @@ const MobileVerification = () => {
                         placeholder="Enter OTP"
                         value={otp}
                         onChange={(e) => setOtp(e.target.value)}
+                        className="input"
                     />
-                    <button onClick={verifyOtp}>Verify OTP</button>
+                    <button onClick={verifyOtp} className="green_btn">Verify OTP</button>
                 </>
             )}
-            {error && <p style={{ color: "red" }}>{error}</p>}
+            <div className="t">
+               {error && <p className="error_msg">{error}</p>}
+            </div>
+            </div>
         </div>
     );
 };

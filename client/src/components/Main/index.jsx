@@ -1,21 +1,87 @@
+// import styles from "./styles.module.css";
+// import Lottie  from 'lottie-react'
+// import home2 from "../pages/home2.json"
+// import logo from "../pages/logo.png"
+
+// const Main = () => {
+// 	const handleLogout = () => {
+// 		localStorage.removeItem("token");
+// 		window.location.reload();
+// 	};
+
+// 	return (
+// 		<div className={styles.main_container}>
+// 			<nav className={styles.navbar}>
+// 				<h1>DRUGSeek</h1>
+// 				{/* <div className="logo"><img src = {logo}/></div> */}
+				
+// 				<button className={styles.white_btn} onClick={handleLogout}>
+// 					Logout
+// 				</button>
+// 			</nav>
+// 			<div className="main-card">
+// 			   <div className="ani-con"><Lottie animationData={home2} className='main-animations'/></div>
+// 			</div>
+// 		</div>
+// 	);
+// };
+
+// export default Main;
+import { useState } from 'react';
 import styles from "./styles.module.css";
+import Lottie from 'lottie-react';
+import home2 from "../pages/home2.json";
+import Home from "../Home";
+import Brain from "../Brain";
+import About from "../About";
+import Faqs from "../Faqs";
 
 const Main = () => {
-	const handleLogout = () => {
-		localStorage.removeItem("token");
-		window.location.reload();
-	};
+    const [activeSection, setActiveSection] = useState("home");
+    const [menuOpen, setMenuOpen] = useState(false);
 
-	return (
-		<div className={styles.main_container}>
-			<nav className={styles.navbar}>
-				<h1>DRUGSeek</h1>
-				<button className={styles.white_btn} onClick={handleLogout}>
-					Logout
-				</button>
-			</nav>
-		</div>
-	);
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        window.location.reload();
+    };
+
+    const renderSection = () => {
+        switch (activeSection) {
+            case "brain":
+                return <Brain />;
+            case "about":
+                return <About />;
+            case "faqs":
+                return <Faqs />;
+            default:
+                return <Home />;
+        }
+    };
+
+    return (
+        <div className={styles.main_container}>
+            <nav className={styles.navbar}>
+                <h1>DRUGSeek</h1>
+                <div className={styles.menu_icon} onClick={() => setMenuOpen(!menuOpen)}>
+                    {menuOpen ? '✖' : '☰'}
+                </div>
+                <div className={`${styles.nav_links} ${menuOpen ? styles.open : ""}`}>
+                    <span onClick={() => { setActiveSection("home"); setMenuOpen(false); }} className={activeSection === "home" ? styles.active : ""}>Home</span>
+                    <span onClick={() => { setActiveSection("brain"); setMenuOpen(false); }} className={activeSection === "brain" ? styles.active : ""}>Brain_Tumor_Segm</span>
+                    <span onClick={() => { setActiveSection("about"); setMenuOpen(false); }} className={activeSection === "about" ? styles.active : ""}>About</span>
+                    <span onClick={() => { setActiveSection("faqs"); setMenuOpen(false); }} className={activeSection === "faqs" ? styles.active : ""}>FAQs</span>
+                    <button className={styles.mobile_logout_btn} onClick={handleLogout}>Logout</button>
+                </div>
+                <button className={styles.white_btn} onClick={handleLogout}>
+                    Logout
+                </button>
+            </nav>
+
+            <div className="content-container">
+                {renderSection()}
+            </div>
+        </div>
+    );
 };
 
 export default Main;
