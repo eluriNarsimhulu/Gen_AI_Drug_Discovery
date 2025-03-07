@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './home.css';
 
-const Home = () => {
+const Home = ({ setActiveSection }) => {
   const [animateHeader, setAnimateHeader] = useState(false);
+  const contactRef = useRef(null);
 
   useEffect(() => {
     setAnimateHeader(true);
   }, []);
+
+  const scrollToContact = () => {
+    contactRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div className="home-container">
@@ -16,8 +21,10 @@ const Home = () => {
           <h2>Revolutionizing Healthcare with AI</h2>
           <p>Advanced AI Solutions for Medical Diagnostics and Drug Discovery</p>
           <div className="header-cta">
-            <a href="/about" className="btn btn-primary">Learn More</a>
-            <a href="/contact" className="btn btn-secondary">Contact Us</a>
+            <a className="btn btn-primary" onClick={() => setActiveSection("about")}>
+              Learn More
+            </a>
+            <a className="btn btn-secondary" onClick={scrollToContact}>Contact Us</a>
           </div>
         </div>
       </header>
@@ -86,9 +93,99 @@ const Home = () => {
         <div className="cta-content">
           <h2>Transform Healthcare with AI</h2>
           <p>Join us in pushing the boundaries of medical technology and drug research.</p>
-          <a href="/contact" className="btn btn-primary">Get Started</a>
+          {/* Navigate to Brain_Tumor_Segm Section */}
+          <a onClick={() => setActiveSection("brain")} className="btn btn-primary">Get Started</a>
         </div>
       </section>
+
+      <section className="contact-section" ref={contactRef} id="contact">
+        <div className="contact-content">
+          <h2>Contact Us</h2>
+          <p>Have questions or want to collaborate? Reach out to our team.</p>
+          
+          <div className="contact-grid">
+            <div className="contact-form">
+              <h3>Send Us a Message</h3>
+              <form>
+                <div className="form-group">
+                  <input type="text" placeholder="Your Name" required />
+                </div>
+                <div className="form-group">
+                  <input type="email" placeholder="Your Email" required />
+                </div>
+                <div className="form-group">
+                  <select>
+                    <option value="">Select Inquiry Type</option>
+                    <option value="partnership">Partnership</option>
+                    <option value="research">Research Collaboration</option>
+                    <option value="support">Technical Support</option>
+                    <option value="other">Other Inquiry</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <textarea placeholder="Your Message" rows="4" required></textarea>
+                </div>
+                <button type="submit" className="btn btn-primary">Send Message</button>
+              </form>
+            </div>
+            
+            <div className="contact-info">
+              <div className="info-item">
+                <div className="info-icon">📍</div>
+                <div>
+                  <h4>Address</h4>
+                  <p>Udaan Block-F, Keshav Memorial Institute Of Technology, Narayanaguda 500029, Telangana, India.</p>
+                </div>
+              </div>
+              <div className="info-item">
+                <div className="info-icon">📞</div>
+                <div>
+                  <h4>Phone</h4>
+                  <p>+91 9030180427</p>
+                </div>
+              </div>
+              <div className="info-item">
+                <div className="info-icon">✉️</div>
+                <div>
+                  <h4>Email</h4>
+                  <p>drugseek.med@gmail.com</p>
+                </div>
+              </div>
+              <div className="social-links">
+                <a href="#" className="social-icon">
+                  <i className="fab fa-linkedin"></i>
+                </a>
+                <a href="#" className="social-icon">
+                  <i className="fab fa-twitter"></i>
+                </a>
+                <a href="#" className="social-icon">
+                  <i className="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-logo">
+            <h3>DrugSeek</h3>
+            <p>Revolutionizing Healthcare with AI</p>
+          </div>
+          <div className="footer-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Blog</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+          <div className="footer-copyright">
+            <p>&copy; 2025 DrugSeek AI. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

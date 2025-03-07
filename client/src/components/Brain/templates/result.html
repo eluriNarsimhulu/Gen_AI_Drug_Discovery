@@ -1,0 +1,90 @@
+
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segmentation Result - Brain Tumor Segmentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 2rem;
+        }
+        .result-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .result-image {
+            max-width: 100%;
+            margin-bottom: 1rem;
+        }
+        .legend {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            border: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container result-container">
+        <div class="header">
+            <h1>Segmentation Result</h1>
+            <p class="lead">The model has analyzed your MRI image</p>
+        </div>
+        
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Result Visualization</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <img src="{{ result_image }}" alt="Segmentation Result" class="result-image">
+                        
+                        <div class="legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: transparent;"></div>
+                                <span>Original Image</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: rgba(255, 0, 0, 0.5);"></div>
+                                <span>Tumor Segmentation</span>
+                            </div>
+                        </div>
+                        
+                        <p class="mb-0">The red overlay indicates areas identified as tumor regions by the UNETR model.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="d-grid gap-2">
+            <a href="/" class="btn btn-primary">Process Another Image</a>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@ import Main from "./components/Main";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import EmailVerify from "./components/EmailVerify";
-import WelcomeScreen from "./components/WelcomeScreen/WelcomeScreen";
+// import WelcomeScreen from "./components/WelcomeScreen/WelcomeScreen";
 import MobileVerification from "./components/MobileVerification"; // ✅ Import
 
 function App() {

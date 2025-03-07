@@ -1,40 +1,10 @@
-// import styles from "./styles.module.css";
-// import Lottie  from 'lottie-react'
-// import home2 from "../pages/home2.json"
-// import logo from "../pages/logo.png"
-
-// const Main = () => {
-// 	const handleLogout = () => {
-// 		localStorage.removeItem("token");
-// 		window.location.reload();
-// 	};
-
-// 	return (
-// 		<div className={styles.main_container}>
-// 			<nav className={styles.navbar}>
-// 				<h1>DRUGSeek</h1>
-// 				{/* <div className="logo"><img src = {logo}/></div> */}
-				
-// 				<button className={styles.white_btn} onClick={handleLogout}>
-// 					Logout
-// 				</button>
-// 			</nav>
-// 			<div className="main-card">
-// 			   <div className="ani-con"><Lottie animationData={home2} className='main-animations'/></div>
-// 			</div>
-// 		</div>
-// 	);
-// };
-
-// export default Main;
 import { useState } from 'react';
 import styles from "./styles.module.css";
-import Lottie from 'lottie-react';
-import home2 from "../pages/home2.json";
 import Home from "../Home";
 import Brain from "../Brain";
 import About from "../About";
 import Faqs from "../Faqs";
+
 
 const Main = () => {
     const [activeSection, setActiveSection] = useState("home");
@@ -54,7 +24,7 @@ const Main = () => {
             case "faqs":
                 return <Faqs />;
             default:
-                return <Home />;
+                return <Home setActiveSection={setActiveSection} />;
         }
     };
 

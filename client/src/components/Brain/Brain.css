@@ -1,0 +1,264 @@
+/* Brain Component Styles */
+.brain-bg-con{
+    background-color: #111229;
+    height: 100vh;
+    padding-top: 100px;
+    padding: 70px 10px 10px 10px;
+}
+.brain-container {
+    width: 900px;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.brain-header {
+    padding: 20px 30px;
+    border-bottom: 1px solid #eaedf3;
+    background: linear-gradient(135deg, #3B82F6 0%, #4F46E5 100%);
+    color: white;
+}
+
+.brain-title {
+    margin: 0 0 5px 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.brain-subtitle {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.brain-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.brain-upload-panel {
+    width: 40%;
+    border-right: 1px solid #eaedf3;
+    padding: 25px;
+    background-color: #f8fafc;
+}
+
+.brain-upload-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.brain-upload-title {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.brain-drop-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    min-height: 220px;
+    margin-bottom: 20px;
+    transition: border-color 0.2s ease;
+    overflow: hidden;
+}
+
+.brain-upload-icon {
+    width: 36px;
+    height: 36px;
+    color: #3B82F6;
+    margin-bottom: 15px;
+}
+
+.brain-drop-text {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.brain-preview-image {
+    max-width: 100%;
+    max-height: 220px;
+    border-radius: 4px;
+}
+
+.brain-file-input {
+    display: none;
+}
+
+.brain-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.brain-reset-button {
+    padding: 8px 16px;
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+}
+
+.brain-reset-button:hover {
+    background-color: #e2e8f0;
+}
+
+.brain-action-button {
+    padding: 10px 16px;
+    background: linear-gradient(to right, #3B82F6, #4F46E5);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    flex-grow: 1;
+    transition: all 0.2s ease;
+}
+
+.brain-action-button:hover {
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.brain-disabled-button {
+    background: linear-gradient(to right, #93c5fd, #a5b4fc);
+    cursor: not-allowed;
+}
+
+.brain-disabled-button:hover {
+    box-shadow: none;
+}
+
+.brain-error-message {
+    margin-top: 15px;
+    padding: 10px 12px;
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border-radius: 6px;
+    font-size: 14px;
+    border-left: 3px solid #b91c1c;
+}
+
+.brain-result-panel {
+    width: 60%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.brain-result-header {
+    margin-bottom: 15px;
+}
+
+.brain-result-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.brain-result-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.brain-segmentation-image {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.brain-download-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: linear-gradient(to right, #3B82F6, #4F46E5);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.brain-download-button:hover {
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.brain-result-note {
+    padding: 12px 15px;
+    background: linear-gradient(to right, #dbeafe, #e0e7ff);
+    border-radius: 6px;
+    font-size: 14px;
+    color: #2563eb;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.brain-empty-result {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #94a3b8;
+}
+
+.brain-empty-icon {
+    margin-bottom: 15px;
+    color: #cbd5e1;
+}
+
+.brain-empty-text {
+    margin: 0;
+    font-size: 14px;
+    max-width: 260px;
+    line-height: 1.5;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .brain-content {
+        flex-direction: column;
+    }
+    
+    .brain-upload-panel,
+    .brain-result-panel {
+        width: 100%;
+    }
+    
+    .brain-upload-panel {
+        border-right: none;
+        border-bottom: 1px solid #eaedf3;
+    }
+    
+}
