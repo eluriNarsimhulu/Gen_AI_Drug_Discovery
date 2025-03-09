@@ -10,12 +10,13 @@ enormously to drug discovery process. This web app uses GenAI for lung
 disease diagnosis on CT images and developing drug design tools to 
 identify active drug molecules,protein-ligand affinity prediction,protein 
 structure prediction and autodocking using ML/GenAI </p>
-<h1>Worging with github via vs code</h1>
-<br/>
-
 <h1>Login Credentials :</h1>
 <p>Email : nani2narsimhulu@gmail.com</p>
 <p>Pass : Nani123$</p>
+<br/>
+<h1>Worging with github via vs code</h1>
+<br/>
+
 create folder in desktop
 <br/>
 open that 
