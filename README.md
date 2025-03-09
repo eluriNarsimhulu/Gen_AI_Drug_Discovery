@@ -14,6 +14,22 @@ structure prediction and autodocking using ML/GenAI </p>
 <p>Email : nani2narsimhulu@gmail.com</p>
 <p>Pass : Nani123$</p>
 <br/>
+
+<h1>Project Running Process :</h1>
+<p>open 3 terminala , then</p>
+<p>In First Terminal of Project folder run commands: </p>
+<p> cd client </p>
+<p> npm start</p>
+<p>In Second Terminal of Project folder run commands: </p>
+<p> cd server </p>
+<p> npm start</p>
+<p>In First Terminal of Project folder run commands like: </p>
+<p> cd client/src/components/Brain </p>
+<p> First to actiavate python installs  : venv\Scripts\activate  //ensure activation by (venv).. in terminal with green color</p>
+<p>Lastly Run command to ON Flask server : python app.py</p>
+<p>That's it...</p>
+<br/>
+
 <h1>Worging with github via vs code</h1>
 <br/>
 
