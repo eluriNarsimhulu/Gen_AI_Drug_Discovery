@@ -3,7 +3,7 @@ import Main from "./components/Main";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import EmailVerify from "./components/EmailVerify";
-// import WelcomeScreen from "./components/WelcomeScreen/WelcomeScreen";
+import WelcomeScreen from "./components/WelcomeScreen/WelcomeScreen";
 import MobileVerification from "./components/MobileVerification"; // ✅ Import
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
     return (
         <Routes>
             {!user ? (
-                <Route path="/" element={<Login/>} />
+                <Route path="/" element={<WelcomeScreen/>} />
             ) : (
                 <Route path="/" element={<Navigate replace to="/main" />} />
             )}

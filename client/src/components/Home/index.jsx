@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './home.css';
+import pc from "../pages/ligand.png";
 
 const Home = ({ setActiveSection }) => {
   const [animateHeader, setAnimateHeader] = useState(false);
@@ -51,6 +52,7 @@ const Home = ({ setActiveSection }) => {
 
       <section className="technology-overview">
         <div className="tech-content">
+          <div className='img-con'><img src={pc} className='ligand hover-effect' alt='Ligand' /></div>
           <h2>Our Technological Edge</h2>
           <div className="tech-details">
             <div className="tech-item">

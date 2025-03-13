@@ -1,0 +1,265 @@
+.lung-bg-con {
+    background-color: #111229;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.lung-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.lung-header {
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(to right, #3a7bd5, #00d2ff);
+    color: white;
+}
+
+.lung-title {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.lung-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Changed from grid to flex column layout */
+.lung-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.lung-upload-panel, .lung-result-panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.lung-upload-box {
+    border: 1px solid #e1e5eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.lung-upload-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.lung-drop-zone {
+    border: 2px dashed #d0d7e2;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9fafc;
+    margin-bottom: 1.5rem;
+}
+
+.lung-drop-zone:hover {
+    border-color: #3a7bd5;
+    background-color: #f0f4f9;
+}
+
+.lung-upload-icon {
+    width: 48px;
+    height: 48px;
+    color: #3a7bd5;
+    margin-bottom: 1rem;
+}
+
+.lung-drop-text {
+    color: #667991;
+    font-size: 1rem;
+}
+
+.lung-preview-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.lung-file-input {
+    display: none;
+}
+
+.lung-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.lung-action-button {
+    background: linear-gradient(to right, #3a7bd5, #00d2ff);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+    max-width: 180px;
+}
+
+.lung-action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(58, 123, 213, 0.3);
+}
+
+.lung-disabled-button {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.lung-disabled-button:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.lung-reset-button {
+    background-color: #fff;
+    color: #667991;
+    border: 1px solid #d0d7e2;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lung-reset-button:hover {
+    background-color: #f0f4f9;
+}
+
+.lung-error-message {
+    color: #e74c3c;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background-color: #fdf3f2;
+    border-radius: 6px;
+    border-left: 4px solid #e74c3c;
+    font-size: 0.9rem;
+}
+
+.lung-result-panel {
+    border: 1px solid #e1e5eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.lung-result-header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.lung-result-title {
+    font-size: 1.3rem;
+    color: #333;
+}
+
+/* Changed to horizontal layout for result images */
+.lung-result-images {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.lung-result-image-item {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.lung-result-image-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.lung-segmentation-image {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.lung-image-caption {
+    margin-top: 0.5rem;
+    color: #667991;
+    font-weight: 600;
+}
+
+.lung-result-note {
+    background-color: #f5f7fa;
+    border-left: 4px solid #3a7bd5;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    color: #667991;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    border-radius: 0 6px 6px 0;
+}
+
+.lung-download-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.lung-download-button {
+    background-color: #3a7bd5;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.lung-empty-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+}
+
+.lung-empty-icon {
+    color: #d0d7e2;
+    margin-bottom: 1rem;
+}
+
+.lung-empty-text {
+    color: #667991;
+    text-align: center;
+}

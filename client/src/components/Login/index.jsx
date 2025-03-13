@@ -1,7 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
+import Lottie  from 'lottie-react'
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
+import login from "../pages/login.json"
 
 const Login = () => {
 	const [data, setData] = useState({ email: "", password: "" });
@@ -61,6 +63,7 @@ const Login = () => {
 				</div>
 				<div className={styles.right}>
 					<h1>New Here ?</h1>
+					<div><Lottie animationData={login} /></div>
 					<Link to="/mobile-verification">
 						<button type="button" className={styles.white_btn}>
 							Register

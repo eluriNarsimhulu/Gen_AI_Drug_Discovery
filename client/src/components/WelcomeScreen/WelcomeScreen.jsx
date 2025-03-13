@@ -15,12 +15,21 @@ const WelcomeScreen = () => {
       <h1 className="wel-text">Welcome to </h1>
       <h1 className="head">DRUGSeek</h1>
       <p className="para">An AI-driven platform revolutionizing lung disease diagnosis and drug discovery. Our mission is to enhance patient care by integrating advanced machine learning with medical imaging and molecular modeling, accelerating the development of effective treatments.</p>
-      <button 
-        onClick={() => navigate("/mobile-verification")}
-        className="get-start-btn"
-      >
-        GET START
-      </button>
+      <div>
+        <button 
+          onClick={() => navigate("/login")}
+          className="get-start-btn login-btn"
+        >
+          LOGIN
+        </button>
+        
+        <button 
+          onClick={() => navigate("/mobile-verification")}
+          className="get-start-btn"
+        >
+          REGISTER
+        </button>
+      </div>
       <div className="d-f">
         <div className="ani-con"><Lottie animationData={home1} className='animations'/></div>
         <div className="ani-con"><Lottie animationData={home2} className='animations'/></div>
